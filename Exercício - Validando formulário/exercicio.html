@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio - Lorran Bonfim</title>   
+    <!-- <script src="js/scripts.js"></script> -->
+    <script>
+
+        function validar(){
+
+            var nome = formulario1.nome;           
+            var idade = formulario1.idade;
+            var email = formulario1.email;
+            var gender = formulario1.gender;
+            var cargo = formulario2.cargo;
+            var setor = formulario2.setor;
+            
+            
+
+            if(nome.value.length < 5 || nome.value == "") {
+                alert("Preencha campo NOME corretamente!");
+                nome.focus();
+                
+                return;                                
+            }
+
+            if(idade.value < 18) {
+                alert("Preencha o campo IDADE corretamente!");
+                idade.focus();
+                return;
+            }
+
+            if(email.value.indexOf("@") == -1 ||
+            email.valueOf.indexOf(".") == -1 ||
+            email.value == ""){
+                alert("Por favor, indique um e-mail válido.")
+                email.focus();
+                return;
+            }
+
+            if(setor.value == "") {
+                alert("Preencha campo SETOR corretamente");
+                setor.focus();
+                return;
+            }
+
+            if(cargo.value == ""){
+                alert("Escolha seu cargo.");
+                cargo.focus();
+                return;
+            }
+        }
+
+            
+
+
+    </script>  
+    <style>
+
+        body {
+            background-color: rgba(204, 204, 204, 0.897);
+        }
+
+        form {
+            margin: 0 auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            background-color: rgba(204, 204, 204, 0.897);
+        }
+
+        #bt-submit {
+            text-align: center; 
+            cursor: pointer;  
+            position: absolute;  
+            display: block;
+            top: 61%;
+            left: 50%;
+        }
+
+        /* .error {
+            color: #ff0000;
+            padding: 2px;
+        } */
+
+    </style>
+
+</head>
+<body>
+    <fieldset>.
+    <div>
+        <div class="box1">
+            <form action="" id="formulario1" name="formulario1">
+             <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <div>
+                        <label for="nome">Nome: </label>
+                        <input type="text" name="nome" id="nome" required>
+                        <div class="msg"></div>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="sexo">Sexo: </label>
+                        <input type="radio" name="gender" id="genero" value="M" required>Masculino
+                        <input type="radio" name="gender" id="genero" value="F" required>Feminino
+                    </div>
+                    <br>
+                    <div>
+                        <label for="idade">Idade: </label>
+                        <input type="number" name="idade" id="idade" required>
+                    </div>               
+             </fieldset>
+            </form>
+        </div>
+        <br>
+        <form action="" id="formulario2" name="formulario2">
+            <fieldset>
+                    <legend>Dados Profissionais</legend>
+                    <div>
+                        <label for="fcontratacao" id="fcontratacao">Forma de Contratação: </label>
+                        <input type="radio" name="ncontratacao" id="registro" value="registrado" required>Registrado
+                        <input type="radio" name="ncontratacao" id="registro" value="contratado" required>Contratado
+                    </div>
+                    <br>
+                    <div>
+                        <label for="cargo">Cargo: </label>
+                        <select name="cargo" id="cargo">
+                        <option value="analistajunior">Analista Junior</option>
+                        <option value="analistapleno">Analista Pleno</option>
+                        <option value="estagiario">Estagiario</option>
+                        <option value="programador">Programador</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div >
+                        <label for="setor">Setor: </label>
+                        <input type="text" name="setor" id="setor" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="data">Data Registro: </label>
+                        <input type="date" name="data" id="data" required>
+                    </div>                
+            </fieldset>
+                    <br>
+                    <div>
+                        <input type="submit" id="bt-submit" class="botao" value="Enviar" onclick="validar()">
+                    </div>                   
+            </form>
+        </div>
+    </div>
+</fieldset>
+</body>
+</html>
